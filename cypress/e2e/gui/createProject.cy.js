@@ -1,9 +1,13 @@
 import {faker} from '@faker-js/faker'
 
-describe('Createproject',()=>{
+const options = { env: { snapshotOnly: true } }
+
+describe('Create Project', options, () => {
     //pré-condição 
     beforeEach(()=>{
+        cy.api_deleteProjects()
         cy.login()
+        
     })
 
     it('sucessfully',()=>{
